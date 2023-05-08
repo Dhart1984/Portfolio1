@@ -5,12 +5,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+
 import { useState, useEffect } from "react";
 
 function Projects(props) {
   // create state to hold projects
   const [projects, setProjects] = useState(null);
-
+  const [about, setAbout] = useState(null);
   //create function to make api call
   const getProjectsData = async () => {
 
@@ -26,7 +27,19 @@ function Projects(props) {
   };
 
   // make an initial call for the data inside a useEffect, so it only happens once on component load
-  useEffect(() => getProjectsData(), []);
+  useEffect(() => {
+    const fetchData = async () => {
+      getProjectsData()
+      try {
+        const response = await fetch('./about.json');
+        const data = await response.json();
+        setAbout(data);
+      } catch (error) {
+        console.error('Error fetching About data:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {

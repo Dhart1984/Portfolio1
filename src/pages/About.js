@@ -26,21 +26,32 @@ function About(props) {
   };
 
   // make an initial call for the data inside a useEffect, so it only happens once on component load
-  useEffect(() => { getAboutData() }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('./about.json');
+        const data = await response.json();
+        setAbout(data);
+      } catch (error) {
+        console.error('Error fetching About data:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
   // define a function that will return the JSX needed once we get the data
   const loaded = () => (
-    <div class="container mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 h-screen">
-      <div class="max-h-96 md:h-screen">
+    <div className="container mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
+      <div className="max-h-96 md:h-screen">
          <img className="object-scale-down object-top" src="https://www.canva.com/design/DAFiWYvLDA8/view" alt=""></img> 
       </div>
-      <div class="flex bg-gray-100 p-10">
-        <div class="mb-auto mt-auto max-w-lg">
-          <h1 class="text-3xl uppercase">Donald Hart</h1>
-          <p class="font-semibold mb-5">Software Engineer</p>
+      <div className="flex bg-gray-100 p-10">
+        <div className="mb-auto mt-auto max-w-lg">
+          <h1 className="text-3xl uppercase">Donald Hart</h1>
+          <p className="font-semibold mb-5">Software Engineer</p>
           <p>"Hey! My name is Donald Hart and I'm a Software Engineer who prides himeslef on actice listening and effective communication. I attended Morehoue College and played D2 football for 5 years. After that, i attened Florida Coastal School of Law and developed my presentation, listening, and communication."</p>
-          <button class="bg-black rounded-md py-3 px-7 mt-6 text-white">Email Me</button>
+          <button className="bg-black rounded-md py-3 px-7 mt-6 text-white">Email Me</button>
         </div>
       </div>
     </div>
