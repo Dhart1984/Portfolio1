@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Project 1",
+    "live": "<https://app.herokuapp.com/whatever>",
+    "git": "<https://github.com/Dhart1984/Varsity>",
+    "image": "../images/athlete.JPG"
+  },
+  {
+    "name": "project2",
+    "live": "<https://app.netlify.app/whatever>",
+    "git": "<http://www.github.com/username/reponame>",
+    "image": "<http://www.imgur.com/pictureofproject.png>"
+  }
+]
