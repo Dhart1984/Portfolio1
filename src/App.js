@@ -15,14 +15,46 @@ function App() {
 
   return (
     <div className="bg-slate-950 App">
-    <Header />
+<div className="App">
+      <Header />
+      <div id="home">
+        <Home />
+      </div>
+      <div id="about">
+        <About URL={URL} />
+      </div>
+      <hr />
+      <div id="projects">
+        <Projects URL={URL} />
+      </div>
+      <hr />
+      {/* <div id="contact">
+        <Contact URL={URL} />
+      </div> */}
+      <Footer />
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-      <Routes>
+      {/* <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/projects" element={<Projects URL={URL} />} />
         <Route path="/about" element={<About URL={URL} />} />
       </Routes>
-      <Footer />
+      <Footer /> */}
     
     </div>
   );

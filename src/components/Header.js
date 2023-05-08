@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from 'react-scroll';
 
 function Header(props) {
   //inline style for the nav tag
@@ -15,19 +16,21 @@ function Header(props) {
 
   return (
     <header>
-      <h1>My Portfolio Page</h1>
-      <nav className="header">
-        <Link to="/">
-          <div>HOME</div>
-        </Link>
-        <Link to="/about">
-          <div>ABOUT</div>
-        </Link>
-        <Link to="/projects">
-          <div>PROJECTS</div>
-        </Link>
-      </nav>
-    </header>
+    <nav className='header'>
+      <ScrollLink to="home" smooth={true} duration={500}>
+        <div>HOME</div>
+      </ScrollLink>
+      <ScrollLink to="about" smooth={true} duration={500}>
+        <div>ABOUT</div>
+      </ScrollLink>
+      <ScrollLink to="projects" smooth={true} duration={500}>
+        <div>PROJECTS</div>
+      </ScrollLink>
+      {/* <ScrollLink to="contact" smooth={true} duration={500}>
+        <div>CONTACT</div>
+      </ScrollLink> */}
+    </nav>
+  </header>
   );
 }
 
