@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="bg-slate-950 App">
-<div className="App">
+<div className="App bg-gradient-to-r from-cyan-500 to-blue-500">
       <Header />
       <div id="home">
         <Home />

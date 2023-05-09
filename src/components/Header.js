@@ -16,7 +16,7 @@ function Header(props) {
 
   return (
     <header>
-    <nav className='header'>
+    <nav className='header bg-gradient-to-r from-cyan-500 to-blue-500'>
       <ScrollLink to="home" smooth={true} duration={500}>
         <div>HOME</div>
       </ScrollLink>

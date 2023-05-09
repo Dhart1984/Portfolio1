@@ -27,13 +27,13 @@ function Home() {
   }
 
   return (
-    <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group bg-slate-950'>
+    <div className=' max-w-[1400px] h-[780px] w-full mx-auto py-16 px-4 relative group bg-slate-950'>
 
       <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
       ></div>
       <div className="bg-black/30 absolute top-0 left-0 w-full h-screen">
         <div className='absolute text-2xl md:text-8xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-          <p className='tex-red-700'>
+          <p className='tex-red-700 '>
             Athlete
             Artist
             Attorney
